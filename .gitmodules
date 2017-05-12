@@ -1,3 +1,3 @@
-[submodule "ce-clear-button"]
-	path = clear-button
-	url = git@github.com:blacklane/ce-clear-button.git
+[submodule "bl-clear-button"]
+    path = clear-button
+    url = git@github.com:blacklane/bl-clear-button.git
