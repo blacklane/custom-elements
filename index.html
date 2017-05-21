@@ -7,6 +7,7 @@
     <title>Blacklane custom elements</title>
     <script src="templates.js"></script>
     <script src="clear-button/clear-button.js" async></script>
+    <script src="address/address.js" async></script>
   </head>
   <body>
     <h1>Custom Elements</h1>
@@ -14,6 +15,17 @@
     <h2>Clear button</h2>
     <input id="input-with-clear">
     <bl-clear-button for="input-with-clear"></bl-clear-button>
+
+    <h2>Address</h2>
+
+    <h3>Default</h3>
+    <bl-address>Willmanndamm 10, Berlin, Germany</bl-address>
+
+    <h3>With icon</h3>
+    <bl-address icon="airport">Willmanndamm 10, Berlin, Germany</bl-address>
+
+    <h3>Two lines</h3>
+    <bl-address>Willmanndamm 10 <i slot="sub">Berlin, Germany</i></bl-address>
 
   </body>
 </html>
