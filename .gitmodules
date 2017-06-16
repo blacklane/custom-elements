@@ -1,6 +1,9 @@
 [submodule "bl-clear-button"]
     path = clear-button
     url = git@github.com:blacklane/bl-clear-button.git
-[submodule "address"]
+[submodule "bl-address"]
 	path = address
-	url = git@github.com:olanod/bl-address.git
+	url = git@github.com:blacklane/bl-address.git
+[submodule "bl-input"]
+	path = input
+	url = git@github.com:blacklane/bl-input.git

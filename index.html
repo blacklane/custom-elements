@@ -8,6 +8,22 @@
     <script src="templates.js"></script>
     <script src="clear-button/clear-button.js" async></script>
     <script src="address/address.js" async></script>
+    <script src="input/input-error.js"></script>
+    <script src="input/input.js" async></script>
+    <style>
+      @import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600&subset=latin,latin-ext);
+      bl-address, bl-input { visibility: hidden; }
+      :defined { visibility: visible; }
+      :root {
+      color: #1F1F1F;
+      font-family: Source Sans Pro,Helvetica,Arial,sans-serif;
+      font-size: 18px;
+      --bl-color-main: #168CCC;
+      --bl-color-gray: #A8A8A8;
+      --bl-color-warning: #EF9309;
+      --bl-color-error: #E34949;
+      }
+    </style>
   </head>
   <body>
     <h1>Custom Elements</h1>
@@ -26,6 +42,34 @@
 
     <h3>Two lines</h3>
     <bl-address>Willmanndamm 10 <i slot="sub">Berlin, Germany</i></bl-address>
+
+    <h2>Input</h2>
+
+    <h3>Normal</h3>
+    <bl-input placeholder="Type some text"></bl-input>
+
+    <h3>With label</h3>
+    <bl-input placeholder="Type some text" label="Incredible input field"></bl-input>
+
+    <h3>With elements</h3>
+    <bl-input>
+      <div slot="before">&gt;</div>
+      <div slot="after">&times;</div>
+    </bl-input>
+
+    <h3>With errors</h3>
+    <bl-input required pattern="\d+">
+      <!-- required(value-missing) like any other native error uses the native browser message -->
+      <!-- native messages can be overwriten -->
+      <bl-input-error name="pattern-mismatch" slot="error">Not a number!</bl-input-error>
+      <!-- custom errors with their own message and validation can be provided as well -->
+      <bl-input-error name="custom-error" slot="error">I don't like that number</bl-input-error>
+      <script>
+        document.currentScript.previousElementSibling.handler = function(val) {
+        if (+val !== 222) throw this.error
+        }
+      </script>
+    </bl-input>
 
   </body>
 </html>
